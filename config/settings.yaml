@@ -1,0 +1,177 @@
+# ============================================================
+# MusicaYT — Configuración Global del Pipeline
+# ============================================================
+# SISTEMA CENTRADO EN MÚSICA — Video se genera manualmente (Veo3)
+#
+# Motor primario: ACE-Step local (RTX 3050 8GB)
+# Motor premium: YuEGP en SageMaker Studio Lab (T4 16GB)
+# Video: El usuario genera 2 clips con Veo3 → se loopean
+# ============================================================
+
+project:
+  name: "MusicaYT"
+  version: "2.0.0"
+  niche: "trading"  # trading | coding | biohacking
+
+# --- Rutas ---
+paths:
+  assets_dir: "assets"
+  audio_raw: "assets/audio_raw"
+  audio_final: "assets/audio_final"
+  video_loops: "assets/video_loops"  # Usuario coloca aquí sus clips de Veo3
+  textures: "assets/textures"
+  output: "output"
+  logs: "logs"
+  templates: "templates"
+  thumbnails_out: "output/thumbnails"
+
+# --- Audio ---
+audio:
+  # Motor primario (local)
+  primary_engine: "ace_step"  # ace_step | yuegp
+  # Motor premium (SageMaker)
+  premium_engine: "yuegp"
+
+  # Parámetros de generación
+  min_duration_hours: 0.05
+  max_duration_hours: 10
+  default_duration_hours: 2
+  segment_duration_sec: 60   # 60s = rápido en RTX 3050, el extender lo loopea a horas
+  sample_rate: 48000  # ACE-Step genera a 48kHz nativo
+  bit_depth: 24
+  format: "wav"  # wav | mp3
+
+  # Post-procesamiento
+  target_lufs: -14.0  # Estándar YouTube
+  crossfade_ms: 500
+  retune_432hz: true
+  
+  # Texturas ambientales
+  textures:
+    enabled: true
+    mix_level_db: -12
+    library:
+      - "rain_on_glass"
+      - "server_hum"
+      - "pink_noise"
+      - "city_distant"
+      - "keyboard_asmr"
+
+  # ACE-Step específico
+  ace_step:
+    model_path: "C:/Users/nerod/OneDrive/Desktop/ACE-Step"
+    low_vram_mode: true
+    dit_only: false
+
+  # YuEGP específico (SageMaker)
+  yuegp:
+    profile: 1
+    segment_sec: 30
+    context_window_sec: 15
+    quantization: "none"
+
+# --- Video (Manual — Veo3) ---
+video:
+  # El usuario genera clips con Veo3 y los coloca en assets/video_loops/
+  # El sistema los loopea automáticamente para cubrir la duración del audio
+  source: "manual"  # manual = clips proporcionados por el usuario
+  codec: "libx264"
+  crf: 20
+  preset: "slow"
+
+# --- Thumbnails ---
+thumbnail:
+  width: 1280
+  height: 720
+  font_family: "JetBrains Mono"
+  font_fallback: "Consolas"
+  bg_color: "#121212"
+  accent_color: "#007AFF"
+  secondary_color: "#FF3B30"
+  text_color: "#FFFFFF"
+
+# --- Metadata / SEO ---
+metadata:
+  channel_name: "TradeField Audio"
+  language: "en"
+  category: "22"
+  default_tags:
+    - "trading focus music"
+    - "prop trading ambient"
+    - "deep focus protocol"
+    - "432Hz trading"
+    - "day trading music"
+    - "forex concentration"
+    - "alpha waves trading"
+    - "no ads trading music"
+    - "trading room ambience"
+    - "wealth mindset"
+  synthetic_content: true
+
+# --- YouTube API ---
+youtube:
+  client_secrets_file: "config/client_secret.json"
+  token_file: "config/youtube_token.json"
+  privacy_status: "public"
+  made_for_kids: false
+  midroll_interval_min: 60
+
+# --- Playlists (crear desde el día 1) ---
+playlists:
+  live_trading_focus:
+    title: "Live Trading Focus"
+    description: "Focus sessions designed for live market hours. Put it on, execute your plan."
+    id: ""  # Rellenar con el ID de YouTube una vez creada
+  pre_market_sessions:
+    title: "Pre-Market Sessions"
+    description: "Ambient audio for pre-market analysis and preparation."
+    id: ""
+  after_hours_review:
+    title: "After-Hours Review"
+    description: "Calm ambient for post-session review and journaling."
+    id: ""
+  rainy_night_focus:
+    title: "Rainy Night Focus"
+    description: "Late-night aesthetic sessions for after-hours traders."
+    id: ""
+  deep_focus_long:
+    title: "Deep Focus Protocol — Long Sessions"
+    description: "Extended 4-10 hour sessions for marathon trading days."
+    id: ""
+
+# --- Afiliación ---
+affiliates:
+  trading:
+    apex_trader:
+      name: "Apex Trader Funding"
+      url: ""
+      commission: "15% recurrente"
+      cta: "🔥 Get Funded — Apex Trader Funding (80% OFF)"
+    tradingview:
+      name: "TradingView"
+      url: ""
+      commission: "CPA variable"
+      cta: "📊 Professional Charts — TradingView"
+  general:
+    nordvpn:
+      name: "NordVPN"
+      url: ""
+      commission: "40-100% primer pago"
+      cta: "🔒 Secure Your Trading — NordVPN"
+    headphones:
+      name: ""
+      url: ""
+      cta: "🎧 Focus Headphones"
+    chair:
+      name: ""
+      url: ""
+      cta: "💺 Ergonomic Trading Chair"
+
+# --- SageMaker ---
+sagemaker:
+  enabled: true
+  session_limit_hours: 4
+  daily_limit_hours: 8
+  storage_gb: 15
+  transfer_method: "gdrive"
+  gdrive_folder_id: ""

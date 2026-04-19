@@ -1,0 +1,11 @@
+logs/
+output/
+*.mp4
+__pycache__/
+*.pyc
+.env
+*.wav
+*.mp3
+assets/audio_final/
+assets/audio_raw/
+assets/music_generada/
