@@ -1,0 +1,121 @@
+profile_id: quiet_midnight_solitude
+language: en
+mood: quiet midnight solitude
+pulse_density: minimal
+tonal_center:
+  root: A
+  octave: 2
+scale_family: dorian
+instrumentation:
+  primary: [midnight drone, dusty pad, dim harmonic wash, choir veil]
+  secondary: [room air, distant grain, muted bell hush]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -2.0
+    motion: -7.0
+    texture: -10.5
+    accents: -15.0
+    rhythm: -16.2
+  stereo_width: 0.31
+  rhythm_style: heartbeat
+  rhythm_intensity: 0.06
+texture_mix:
+  rain: 0.0
+  room_tone: 0.4
+  air: 0.22
+  tape: 0.16
+section_schema:
+  - role: intro
+    share: 0.09
+    emotional_goal: Start sparse and intimate.
+    density: 0.14
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 1
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: settle
+    share: 0.15
+    emotional_goal: Let solitude feel deep but not cold.
+    density: 0.2
+    texture_policy: air_soft
+    harmonic_drift_policy: anchored
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.21
+    emotional_goal: Long reflective drift.
+    density: 0.24
+    texture_policy: air_soft
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.18
+    emotional_goal: Darker interior tone with restrained motion.
+    density: 0.26
+    texture_policy: air_wide
+    harmonic_drift_policy: descending
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.11
+    emotional_goal: Clear the center and reduce listener fatigue.
+    density: 0.1
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 1
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.16
+    emotional_goal: Return with a small rise in warmth.
+    density: 0.22
+    texture_policy: air_soft
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: Exit with almost no forward pull.
+    density: 0.07
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 1
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 2h
+loudness_target: -18
+thumbnail_style:
+  gradient_top: "#1f2939"
+  gradient_bottom: "#030408"
+  accent: "#c4d2ff"
+title_families:
+  - "Quiet Midnight Solitude | {DURATION}"
+  - "{SERIES} | Midnight Solitude Ambient | {DURATION}"
+  - "{DURATION} Quiet Solitude at Midnight"
+forbidden_artifacts:
+  - bright highs
+  - audible loop points
+  - rhythmic busyness
+  - wide distracting movement
+branding:
+  channel_name: "Quiet Midnight Solitude"
+  series_name: "Quiet Midnight Solitude"
+  description_hook: "Sparse late-night ambient for solitude, rest, and gentle emotional distance."
+  tags: [midnight ambient, solitude ambient, quiet night rest, emotional ambient]
+  thumbnail_text: "Midnight Solitude"
+  hud_label: "Midnight Solitude"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"

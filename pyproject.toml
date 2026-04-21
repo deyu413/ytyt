@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ambient-engine"
+version = "0.1.0"
+description = "Free/open ambient music production engine for long-form YouTube output."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "soundfile>=0.12",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "imageio>=2.34",
+  "imageio-ffmpeg>=0.5.1",
+  "pyloudnorm>=0.1.1",
+  "google-api-python-client>=2.100",
+  "google-auth-oauthlib>=1.0",
+  "google-auth-httplib2>=0.1",
+]
+
+[project.scripts]
+ambient = "ambient_engine.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

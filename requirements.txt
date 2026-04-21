@@ -1,46 +1,11 @@
-# ============================================================
-# MusicaYT — Dependencias
-# ============================================================
-# pip install -r requirements.txt
-# ============================================================
-
-# === Audio Core ===
 numpy>=1.24
 soundfile>=0.12
-librosa>=0.10
-pyloudnorm>=0.1.0
-resampy>=0.4
-
-# === Image / Thumbnails ===
 Pillow>=10.0
-
-# === Config ===
-pyyaml>=6.0
-
-# === CLI ===
-click>=8.1
-
-# === YouTube API ===
+PyYAML>=6.0
+imageio>=2.34
+imageio-ffmpeg>=0.5.1
+pyloudnorm>=0.1.1
 google-api-python-client>=2.100
 google-auth-oauthlib>=1.0
 google-auth-httplib2>=0.1
 
-# === Utilidades ===
-tqdm>=4.66
-requests>=2.31
-
-# ============================================================
-# DEPENDENCIAS EXTERNAS (instalar por separado):
-# ============================================================
-# FFmpeg:
-#   Windows: winget install ffmpeg
-#   https://ffmpeg.org/download.html
-#
-# ACE-Step (motor de audio local):
-#   git clone https://github.com/ace-step/ACE-Step.git
-#   cd ACE-Step && pip install -e .
-#
-# YuEGP (motor premium, SageMaker):
-#   git clone https://github.com/YuEGP/YuEGP.git
-#   (se instala automáticamente en SageMaker con sagemaker/notebook_audio.py)
-# ============================================================

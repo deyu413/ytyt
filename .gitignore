@@ -1,3 +1,7 @@
+sessions/
+analysis/
+.vendor/
+.ambient_venv/
 logs/
 output/
 *.mp4
@@ -9,3 +13,7 @@ __pycache__/
 assets/audio_final/
 assets/audio_raw/
 assets/music_generada/
+assets/textures/
+dist/
+build/
+*.egg-info/

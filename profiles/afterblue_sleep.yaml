@@ -1,0 +1,130 @@
+profile_id: afterblue_sleep
+language: en
+mood: after blue sleep
+pulse_density: none
+tonal_center:
+  root: D
+  octave: 3
+scale_family: aeolian
+instrumentation:
+  primary: [soft pad, low drone, muted piano shadow, choir veil]
+  secondary: [room veil, distant hush, soft room cloth]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -2.4
+    motion: -8.8
+    texture: -11.8
+    accents: -19.0
+    rhythm: -30.0
+  stereo_width: 0.3
+  rhythm_style: muted-step
+  rhythm_intensity: 0.0
+texture_mix:
+  rain: 0.0
+  room_tone: 0.52
+  air: 0.12
+  tape: 0.04
+section_schema:
+  - role: intro
+    share: 0.08
+    emotional_goal: Ease into stillness without a hard entry.
+    density: 0.18
+    texture_policy: room_hush
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: settle
+    share: 0.14
+    emotional_goal: Slow the listener down and create gentle safety.
+    density: 0.2
+    texture_policy: room_hush
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.22
+    emotional_goal: Enter an extended suspended drift.
+    density: 0.22
+    texture_policy: velvet_room
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.2
+    emotional_goal: Deepen drift with slightly darker color.
+    density: 0.24
+    texture_policy: velvet_room
+    harmonic_drift_policy: descending
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.1
+    emotional_goal: Clear the field and lower fatigue.
+    density: 0.14
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.16
+    emotional_goal: Return warmth without waking the listener.
+    density: 0.2
+    texture_policy: room_hush
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: Let the piece taper into near-silence.
+    density: 0.1
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 2h
+loudness_target: -18
+thumbnail_style:
+  gradient_top: "#19324f"
+  gradient_bottom: "#04060d"
+  accent: "#8fd0ff"
+title_families:
+  - "{DURATION} After Blue Sleep | {SERIES}"
+  - "Late Night Drift for Sleep | {DURATION}"
+  - "{SERIES} | Soft Blue Rest | {DURATION}"
+forbidden_artifacts:
+  - obvious looping
+  - harsh upper mids
+  - abrupt section jumps
+  - busy percussion
+branding:
+  channel_name: "Afterblue Sleep"
+  series_name: "Afterblue Sleep"
+  description_hook: "Long-form late-night ambient for sleep, slowing thoughts, and low-light rest."
+  tags: [sleep ambient, late night ambient, calm mind, blue hour sleep]
+  thumbnail_text: "Afterblue Sleep"
+  hud_label: "Afterblue Sleep"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"
+  shorts:
+    highlight_mode: calm_hook
+    emotional_hooks:
+      - "it's late. let your mind rest."
+      - "no more thinking tonight."
+      - "maybe the night will hold you."
+    mood_words: [BLUE, QUIET, REST]
+    teaser_line: "FULL VERSION ON CHANNEL"
+    teaser_cta: "watch the long version"

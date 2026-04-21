@@ -1,0 +1,121 @@
+profile_id: blue_hour_rest
+language: en
+mood: blue hour rest
+pulse_density: soft
+tonal_center:
+  root: C
+  octave: 3
+scale_family: lydian
+instrumentation:
+  primary: [glass pad, bowed synth, low bloom, choir veil]
+  secondary: [air shimmer, room wash, muted bell halo]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -2.5
+    motion: -6.0
+    texture: -9.0
+    accents: -14.5
+    rhythm: -13.2
+  stereo_width: 0.38
+  rhythm_style: glass-pulse
+  rhythm_intensity: 0.22
+texture_mix:
+  rain: 0.0
+  room_tone: 0.28
+  air: 0.38
+  tape: 0.12
+section_schema:
+  - role: intro
+    share: 0.09
+    emotional_goal: Open with soft light and suspended air.
+    density: 0.19
+    texture_policy: air_soft
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: settle
+    share: 0.15
+    emotional_goal: Settle into reflective rest.
+    density: 0.25
+    texture_policy: air_soft
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.22
+    emotional_goal: Stretch into luminous drift.
+    density: 0.3
+    texture_policy: air_wide
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.18
+    emotional_goal: Add a little shimmer without waking energy.
+    density: 0.33
+    texture_policy: air_wide
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.1
+    emotional_goal: Reduce color and make room to breathe.
+    density: 0.15
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.16
+    emotional_goal: Return with warmth and low pulse.
+    density: 0.27
+    texture_policy: air_soft
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: Fade slowly into blue quiet.
+    density: 0.1
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 90m
+loudness_target: -18
+thumbnail_style:
+  gradient_top: "#233e69"
+  gradient_bottom: "#06080d"
+  accent: "#9cb9ff"
+title_families:
+  - "Blue Hour Rest | {DURATION}"
+  - "{SERIES} | Luminous Rest | {DURATION}"
+  - "{DURATION} Blue Hour Ambient Rest"
+forbidden_artifacts:
+  - brittle highs
+  - jump-cut transitions
+  - repetitive arpeggio patterns
+  - static stereo image
+branding:
+  channel_name: "Blue Hour Rest"
+  series_name: "Blue Hour Rest"
+  description_hook: "Luminous low-energy ambient for early night, solitude, and soft decompression."
+  tags: [blue hour ambient, evening rest, calm ambient, solitude ambient]
+  thumbnail_text: "Blue Hour Rest"
+  hud_label: "Blue Hour Rest"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"

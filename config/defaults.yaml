@@ -1,0 +1,16 @@
+audio:
+  sample_rate: 48000
+  channels: 2
+  bit_depth: 24
+  block_seconds: 10
+  crossfade_seconds: 10.0
+  mix_block_frames: 65536
+  true_peak_ceiling: 0.8912509381337456
+render:
+  preview_seconds: 60
+qc:
+  analysis_block_seconds: 15
+  minimum_global_score: 72.0
+publishing:
+  youtube:
+    privacy_status: private

@@ -1,0 +1,138 @@
+profile_id: afterblue_reference_sleep
+language: en
+mood: afterblue reference sleep / dark bass breathing
+pulse_density: minimal
+tonal_center:
+  root: C#
+  octave: 3
+scale_family: afterblue_minor_cluster
+instrumentation:
+  production_dna: reference_dark_bass
+  primary: [low velvet pad, dark organ bloom, muted bowed shadow, warm body pad]
+  secondary: [subharmonic bass drone, black room tone, warm tape floor, distant low choir]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -4.6
+    motion: -3.8
+    texture: -21.0
+    accents: -24.0
+    rhythm: -34.0
+  stereo_width: 0.62
+  target_stereo_side_mid: 0.2
+  max_stereo_side_mid: 0.34
+  rhythm_style: breathing-swell
+  rhythm_intensity: 0.0
+  breath_rate_hz: 0.028
+  dynamic_breath_depth: 0.28
+texture_mix:
+  rain: 0.0
+  room_tone: 0.68
+  air: 0.015
+  tape: 0.05
+section_schema:
+  - role: intro
+    share: 0.08
+    emotional_goal: Enter through a dark low drone with no bright noise.
+    density: 0.18
+    texture_policy: black_room
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: settle
+    share: 0.14
+    emotional_goal: Establish the slow bass pulse and low-mid warmth.
+    density: 0.24
+    texture_policy: sub_room
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.22
+    emotional_goal: Maintain hypnotic dark breathing without obvious loop points.
+    density: 0.3
+    texture_policy: sub_room
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.2
+    emotional_goal: Deepen the bass field and slowly shift harmonic color.
+    density: 0.34
+    texture_policy: sub_room
+    harmonic_drift_policy: descending
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.1
+    emotional_goal: Drop density while keeping the bass anchor alive.
+    density: 0.16
+    texture_policy: black_room
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.16
+    emotional_goal: Return with wider stereo bloom but no upper-mid glare.
+    density: 0.28
+    texture_policy: sub_room
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: Let the low drone fade into a dark room tail.
+    density: 0.12
+    texture_policy: black_room
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 2h
+loudness_target: -19
+thumbnail_style:
+  gradient_top: "#102942"
+  gradient_bottom: "#01040a"
+  accent: "#6fb8df"
+title_families:
+  - "it's late, let your mind rest | afterblue sleep ambient | {DURATION}"
+  - "forget about the day | dark sleep ambient | {DURATION}"
+  - "no more thinking tonight | afterblue sleep | {DURATION}"
+forbidden_artifacts:
+  - obvious looping
+  - harsh upper mids
+  - broadband hiss
+  - tv static noise
+  - bright air layer
+  - abrupt section jumps
+  - busy percussion
+branding:
+  channel_name: "Afterblue Sleep"
+  series_name: "Afterblue Sleep"
+  description_hook: "Dark low-frequency sleep ambient with slow breathing movement and no harsh noise."
+  tags: [sleep ambient, dark ambient sleep, late night ambient, calm mind, blue hour sleep]
+  thumbnail_text: "Afterblue Sleep"
+  hud_label: "Afterblue Sleep"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"
+  shorts:
+    highlight_mode: calm_hook
+    emotional_hooks:
+      - "it's late. let your mind rest."
+      - "no more thinking tonight."
+      - "maybe the night will hold you."
+    mood_words: [BLUE, QUIET, REST]
+    teaser_line: "FULL VERSION ON CHANNEL"
+    teaser_cta: "watch the long version"

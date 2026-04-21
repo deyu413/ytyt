@@ -1,0 +1,121 @@
+profile_id: rainy_city_calm
+language: en
+mood: rainy city calm
+pulse_density: low
+tonal_center:
+  root: F
+  octave: 3
+scale_family: dorian
+instrumentation:
+  primary: [mist pad, glass drone, wet tape pulse, brushed organ wash]
+  secondary: [rain noise, distant traffic hush, wet bell mist]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -2.5
+    motion: -5.5
+    texture: -8.5
+    accents: -13.5
+    rhythm: -11.6
+  stereo_width: 0.42
+  rhythm_style: rainwalk
+  rhythm_intensity: 0.28
+texture_mix:
+  rain: 0.65
+  room_tone: 0.2
+  air: 0.25
+  tape: 0.1
+section_schema:
+  - role: intro
+    share: 0.08
+    emotional_goal: Open with rain and distant glow.
+    density: 0.2
+    texture_policy: rain_soft
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: settle
+    share: 0.16
+    emotional_goal: Establish warm urban calm.
+    density: 0.28
+    texture_policy: rain_soft
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.2
+    emotional_goal: Let the city motion blur into background memory.
+    density: 0.34
+    texture_policy: rain_wide
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.2
+    emotional_goal: Slightly more pulse, still restrained.
+    density: 0.38
+    texture_policy: rain_wide
+    harmonic_drift_policy: descending
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.1
+    emotional_goal: Pull back the pulse and leave the rain exposed.
+    density: 0.18
+    texture_policy: rain_only
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.16
+    emotional_goal: Reintroduce harmonic warmth without clutter.
+    density: 0.3
+    texture_policy: rain_soft
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: End in quiet rain and low light.
+    density: 0.12
+    texture_policy: rain_only
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 2h
+loudness_target: -16
+thumbnail_style:
+  gradient_top: "#28425a"
+  gradient_bottom: "#04060b"
+  accent: "#9ac8ff"
+title_families:
+  - "Rainy City Calm | {DURATION}"
+  - "{SERIES} | Wet Streets, Quiet Mind | {DURATION}"
+  - "{DURATION} Rainy Blue Hour Calm"
+forbidden_artifacts:
+  - sharp transients
+  - obvious loop seam
+  - brittle rain texture
+  - over-bright stereo image
+branding:
+  channel_name: "Rainy City Calm"
+  series_name: "Rainy City Calm"
+  description_hook: "Urban late-night ambient shaped by rain, distance, and a restrained pulse."
+  tags: [rain ambient, city night ambient, blue hour calm, quiet rain]
+  thumbnail_text: "Rainy City Calm"
+  hud_label: "Rainy City Calm"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"

@@ -1,0 +1,30 @@
+routes:
+  - task: longform_section_seed
+    preferred_model: ace_step_1_5
+    fallback_model: procedural_dsp
+    why: "ACE-Step is the preferred free/open musical generator for controlled instrumental material when a GPU stack is installed."
+    cost: "Free/open local inference"
+    latency: "Medium on local GPU"
+    quality_tradeoff: "Higher musical realism than procedural DSP, but optional because setup is heavier."
+  - task: cpu_safe_longform
+    preferred_model: procedural_dsp
+    fallback_model: procedural_dsp
+    why: "Guaranteed runnable baseline with no external model dependency."
+    cost: "Free/open local inference"
+    latency: "Low to medium on CPU"
+    quality_tradeoff: "More synthetic than ACE-Step, but deterministic, portable, and safe for demo/output generation."
+  - task: structured_song_experiment
+    preferred_model: yue
+    fallback_model: ace_step_1_5
+    why: "YuE is better suited to explicit multi-minute structure, but remains optional for ambient instrumental work."
+    cost: "Free/open local inference"
+    latency: "High on local GPU"
+    quality_tradeoff: "Potentially richer macro-structure, but more overhead and less necessary for the core ambient engine."
+  - task: texture_enhancement
+    preferred_model: stable_audio_open
+    fallback_model: procedural_dsp
+    why: "Stable Audio Open can help with short texture or field-recording style layers, but the base engine must not depend on it."
+    cost: "Free under community terms for eligible users"
+    latency: "Medium to high on local GPU"
+    quality_tradeoff: "Potentially better texture realism, but optional due to license and setup constraints."
+

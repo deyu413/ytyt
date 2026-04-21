@@ -1,0 +1,121 @@
+profile_id: quiet_night_focus
+language: en
+mood: quiet night focus
+pulse_density: low
+tonal_center:
+  root: G
+  octave: 2
+scale_family: aeolian
+instrumentation:
+  primary: [night pad, sub drone, low pulse, muted organ veil]
+  secondary: [soft air, distant grain, muted bell haze]
+  stems: [drone, motion, texture, accents, rhythm]
+  stem_levels_db:
+    drone: -2.0
+    motion: -5.0
+    texture: -10.0
+    accents: -13.0
+    rhythm: -10.8
+  stereo_width: 0.36
+  rhythm_style: muted-step
+  rhythm_intensity: 0.34
+texture_mix:
+  rain: 0.0
+  room_tone: 0.3
+  air: 0.25
+  tape: 0.18
+section_schema:
+  - role: intro
+    share: 0.08
+    emotional_goal: Create quiet concentration immediately.
+    density: 0.2
+    texture_policy: air_soft
+    harmonic_drift_policy: anchored
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: settle
+    share: 0.16
+    emotional_goal: Lock into slow attention.
+    density: 0.29
+    texture_policy: air_soft
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: silk_crossfade
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_a
+    share: 0.2
+    emotional_goal: Hold a continuous low-energy work state.
+    density: 0.36
+    texture_policy: air_wide
+    harmonic_drift_policy: slow_modal_shift
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: drift_b
+    share: 0.2
+    emotional_goal: Introduce slight forward motion without fatigue.
+    density: 0.4
+    texture_policy: air_wide
+    harmonic_drift_policy: descending
+    transition_policy: long_blend
+    max_reuse: 1
+    layer_budget: 4
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: sparse_break
+    share: 0.09
+    emotional_goal: Remove motion and reset the ear.
+    density: 0.16
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: dissolve
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+  - role: return
+    share: 0.17
+    emotional_goal: Restore concentration with slightly cleaner edges.
+    density: 0.31
+    texture_policy: air_soft
+    harmonic_drift_policy: rising_return
+    transition_policy: long_blend
+    max_reuse: 0
+    layer_budget: 3
+    allowed_generators: [ace_step_1_5, procedural_dsp]
+  - role: low_energy_tail
+    share: 0.1
+    emotional_goal: Taper out without breaking focus abruptly.
+    density: 0.12
+    texture_policy: almost_dry
+    harmonic_drift_policy: anchored
+    transition_policy: vanish
+    max_reuse: 0
+    layer_budget: 2
+    allowed_generators: [procedural_dsp, ace_step_1_5]
+target_length: 2h
+loudness_target: -16
+thumbnail_style:
+  gradient_top: "#16293c"
+  gradient_bottom: "#05070b"
+  accent: "#92b7ff"
+title_families:
+  - "Quiet Night Focus | {DURATION}"
+  - "{SERIES} | Low Light Deep Calm | {DURATION}"
+  - "{DURATION} Night Focus Ambient"
+forbidden_artifacts:
+  - aggressive transients
+  - obvious bar loops
+  - tonal drift without control
+  - bright clicky highs
+branding:
+  channel_name: "Quiet Night Focus"
+  series_name: "Quiet Night Focus"
+  description_hook: "Long-form ambient for deep calm, reading, study, and low-light concentration."
+  tags: [focus ambient, study ambient, calm focus, quiet night]
+  thumbnail_text: "Quiet Night Focus"
+  hud_label: "Quiet Night Focus"
+  privacy_status: private
+  engine_tag: "Ambient Engine / Free-Open Core"
